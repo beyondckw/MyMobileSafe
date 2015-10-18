@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="55dip"
+        android:background="#8866ff00"
+        android:gravity="center"
+        android:text="流量统计"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+    
+     <RelativeLayout 
+         android:layout_below="@id/textView1"
+   	 	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent" >  
+        <FrameLayout 
+             android:id="@+id/fl"
+        	 android:layout_width="fill_parent"
+        	 android:layout_height="fill_parent">
+        
+        	<LinearLayout 
+	            android:visibility="invisible"
+	            android:id="@+id/ll_loading"
+	            android:gravity="center"
+	            android:layout_width="fill_parent"
+	       		android:layout_height="fill_parent"
+	       		android:orientation="vertical">
+            
+           	 	<ProgressBar 
+                  android:layout_width="wrap_content"
+       			  android:layout_height="wrap_content" />
+            	<TextView 
+                  android:text="正在加载数据..."
+                  android:layout_width="wrap_content"
+       		 	  android:layout_height="wrap_content" />
+        	</LinearLayout>
+
+      		<ListView
+      		    android:id="@+id/lv_traffic_manager"
+      		    android:layout_width="fill_parent"
+      		    android:layout_height="fill_parent"
+      		    android:fastScrollEnabled="true" >
+      		</ListView>
+
+    	</FrameLayout>
+	
+
+	        <SlidingDrawer
+	            android:layout_alignParentBottom="true"
+	            android:id="@+id/mydrawer"
+	            android:layout_width="fill_parent"
+	            android:layout_height="80dip"
+	            android:content="@+id/mycontent"
+	            android:handle="@+id/myhandle"
+	            android:orientation="vertical" >
+	            
+                <ImageView
+                     android:id="@id/myhandle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sliding_drawer_handle_bottom" />
+                
+	            <RelativeLayout
+	                android:background="#000000"
+	                android:id="@id/mycontent"
+	                android:layout_width="fill_parent"
+	                android:layout_height="fill_parent"
+	                 >
+	                <TextView
+	                     android:layout_marginLeft="10dip"
+	                     android:background="@drawable/call_locate_green"
+	                    android:id="@+id/tv1"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="fill_parent"
+	                    android:text="移动流量" 
+	                    android:textColor="#ffffff"
+	                    />
+	                <TextView
+	                    android:id="@+id/tv2"
+	                    android:layout_alignParentRight="true"
+	                    android:layout_marginRight="10dip"
+	                    android:background="@drawable/call_locate_orange"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="fill_parent"
+	                    android:text="手机流量" 
+	                    android:textColor="#ffffff"/>
+	           </RelativeLayout>
+	       </SlidingDrawer>
+   </RelativeLayout>
+    
+</RelativeLayout>

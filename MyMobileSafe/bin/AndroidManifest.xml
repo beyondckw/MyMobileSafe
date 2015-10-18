@@ -1,0 +1,123 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ckw.mymobilesafe"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+     <uses-permission android:name="android.permission.SEND_SMS"/>
+     
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.ckw.mymobilesafe" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <!-- <uses-permission android:name="android.permission.DELETE_CACHE_FILES"/> -->
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"   
+        android:theme="@style/AppBaseTheme">
+        <uses-library android:name="android.test.runner" />
+        
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>"
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".LostFindActivity" />
+        <activity android:name=".Setup1Activity" />
+        <activity android:name=".Setup2Activity" />
+        <activity android:name=".Setup3Activity" />
+        <activity android:name=".Setup4Activity" />
+        <activity android:name=".SelectContactActivity" />
+        <activity android:name=".AtoolsActivity" />
+        <activity android:name=".NumberAddressQueryActivity" />
+        <activity android:name=".CallSmsSafeActivity" />
+        <activity android:name=".AppManagerActivity" />
+        <activity android:name=".TaskManagerActivity" />
+        <activity android:name=".TaskSettingActivity" />
+        <activity android:name=".EnterPwdActivity"
+              android:launchMode="singleInstance"
+            android:excludeFromRecents="true"/>
+         <activity android:name=".TrafficManagerActivity" />
+        <activity android:name=".AntiVirusActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+       <activity android:name=".CleanCacheActivity"></activity>
+        
+        
+        <service android:name="com.ckw.mymobilesafe.service.GPSService"/>
+        <service android:name="com.ckw.mymobilesafe.service.AddressService"/>
+        <service android:name="com.ckw.mymobilesafe.service.CallSmsSafeService"/>
+        <service android:name="com.ckw.mymobilesafe.service.AutoCleanService"/>
+        <service android:name="com.ckw.mymobilesafe.service.UpdateWidgetService"/>
+        <service android:name="com.ckw.mymobilesafe.service.WatchDogService"/>
+       
+        
+        <receiver android:name="com.ckw.mymobilesafe.receiver.BootCompleteReceiver">
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+         <receiver android:name="com.ckw.mymobilesafe.receiver.SMSReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+       <!--  <receiver android:name="com.ckw.mymobilesafe.receiver.OutCallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver> -->
+        
+         <receiver android:name="com.ckw.mymobilesafe.receiver.MyWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/process_widget_provider" />
+        </receiver>
+        
+        <receiver android:name="com.ckw.mymobilesafe.receiver.KillAllRecevier">
+            <intent-filter >
+                <action android:name="com.ckw.mymobilesafe.killall"/>
+            </intent-filter>
+        </receiver>
+         
+    </application>
+
+</manifest>

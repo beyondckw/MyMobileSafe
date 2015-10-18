@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"  
+    xmlns:tools="http://schemas.android.com/tools" 
+     android:id="@+id/ScrollView" 
+     android:background="@drawable/main_bg_2"
+     android:layout_width="fill_parent"   
+     android:layout_height="fill_parent" >
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="586dp"
+	    android:orientation="vertical"
+	    android:paddingLeft="40dp" >
+
+    	 <LinearLayout
+    	     android:id="@+id/main_ll_0"
+    	     android:layout_width="wrap_content"
+    	     android:layout_height="wrap_content">
+
+    	     <ImageView
+    	         android:id="@+id/main_iv"
+    	         style="@style/main_head"
+    	         android:layout_width="wrap_content"
+    	         android:layout_height="wrap_content"
+    	         android:src="@drawable/headimage" />
+         
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:textSize="22sp"
+        		android:layout_marginLeft="20dip"
+        		android:textColor="#000000"
+                android:text="我的手机卫士" />
+       	 </LinearLayout>
+    
+    
+      
+	    <RelativeLayout
+	         
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	
+	        <LinearLayout
+	            android:id="@+id/main_ll_1"
+	            android:layout_marginRight="10dp"
+	            style="@style/main_block_ll_left" >
+	
+	            <TextView
+	                style="@style/main_block_tv"
+	                android:textColor="#ffffff"
+	                android:drawableTop="@drawable/disk_fangdao"
+	                android:text="手机防盗" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/main_ll_2"
+	            android:layout_marginLeft="10dp"
+	            style="@style/main_block_ll_right"
+	            android:layout_toRightOf="@id/main_ll_1" >
+	
+	            <TextView
+	                style="@style/main_block_tv"
+	                android:textColor="#ffffff"
+	                android:drawableTop="@drawable/disk_tongxun"
+	                android:text="通讯卫士" />
+	        </LinearLayout>
+	    </RelativeLayout>
+	
+	    <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	
+	        <LinearLayout
+	             android:layout_marginRight="10dp"
+	            android:id="@+id/main_ll_3"
+	            style="@style/main_block_ll_left"
+	            android:layout_marginTop="10dp" >
+	
+	            <TextView
+	                style="@style/main_block_tv"
+	                android:textColor="#ffffff"
+	                android:drawableTop="@drawable/disk_ruanjian"
+	                android:text="软件管理" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/main_ll_4"
+	            style="@style/main_block_ll_right"
+	            android:layout_marginTop="10dp"
+	            android:layout_marginLeft="10dp"
+	            android:layout_toRightOf="@id/main_ll_3" >
+	
+	            <TextView
+	                style="@style/main_block_tv"
+	                android:textColor="#ffffff"
+	                android:drawableTop="@drawable/disk_jincheng"
+	                android:text="进程管理" />
+	        </LinearLayout>
+	    </RelativeLayout>
+	
+	    <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	
+	        <LinearLayout
+	            android:id="@+id/main_ll_5"
+	            style="@style/main_block_ll_left"
+	             android:layout_marginRight="10dp"
+	            android:layout_marginTop="10dp" >
+	
+	            <TextView
+	                style="@style/main_block_tv"
+	                android:textColor="#ffffff"
+	                android:drawableTop="@drawable/disk_shadu"
+	                android:text="手机杀毒" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/main_ll_6"
+	            style="@style/main_block_ll_right"
+	            android:layout_marginTop="10dp"
+	            android:layout_marginLeft="10dp"
+	            android:layout_alignBottom="@id/main_ll_5"
+	            android:layout_toRightOf="@id/main_ll_5" >
+	
+	            <TextView
+	                style="@style/main_block_tv"
+	                android:textColor="#ffffff"
+	                android:drawableTop="@drawable/disk_liuliang"
+	                android:text="流量统计" />
+	        </LinearLayout>
+	    </RelativeLayout>
+	
+	    <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:layout_marginBottom="10dp">
+	
+	        <LinearLayout
+	            android:id="@+id/main_ll_7"
+	            style="@style/main_block_ll_left"
+	             android:layout_marginRight="10dp"
+	            android:layout_marginTop="10dp" >
+	
+	            <TextView
+	                style="@style/main_block_tv"
+	                android:textColor="#ffffff"
+	                android:drawableTop="@drawable/disk_qingli"
+	                android:text="缓存清理" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/main_ll_8"
+	            style="@style/main_block_ll_right"
+	            android:layout_marginTop="10dp"
+	            android:layout_marginLeft="10dp"
+	            
+	            android:layout_alignBottom="@id/main_ll_7"
+	            android:layout_toRightOf="@id/main_ll_7" >
+	
+	            <TextView
+	                style="@style/main_block_tv"
+	                android:textColor="#ffffff"
+	                android:drawableTop="@drawable/disk_gaoji"
+	                android:text="高级工具" />
+	        </LinearLayout>
+	    </RelativeLayout>
+	</LinearLayout>
+</ScrollView>
